@@ -47,26 +47,26 @@ public class Employee extends DataPegawai{
 		childIdNumbers = new LinkedList<String>();
 	}
 	
-	/**
-	 * Fungsi untuk menentukan gaji bulanan pegawai berdasarkan grade kepegawaiannya (grade 1: 3.000.000 per bulan, grade 2: 5.000.000 per bulan, grade 3: 7.000.000 per bulan)
-	 * Jika pegawai adalah warga negara asing gaji bulanan diperbesar sebanyak 50%
-	 */
 	
+	public final int grade1 = 3000000;
+	public final int grade2 = 5000000;
+	public final int grade3 = 7000000;
+
 	public void setMonthlySalary(int grade) {	
 		if (grade == 1) {
-			monthlySalary = 3000000;
+			monthlySalary = grade1;
 			if (isForeigner) {
-				monthlySalary = (int) (3000000 * 1.5);
+				monthlySalary = (int) (grade1 * 1.5);
 			}
 		}else if (grade == 2) {
-			monthlySalary = 5000000;
+			monthlySalary = grade2;
 			if (isForeigner) {
-				monthlySalary = (int) (3000000 * 1.5);
+				monthlySalary = (int) (grade2 * 1.5);
 			}
 		}else if (grade == 3) {
-			monthlySalary = 7000000;
+			monthlySalary = grade3;
 			if (isForeigner) {
-				monthlySalary = (int) (3000000 * 1.5);
+				monthlySalary = (int) (grade3 * 1.5);
 			}
 		}
 	}
@@ -91,7 +91,6 @@ public class Employee extends DataPegawai{
 	
 	public int getAnnualIncomeTax() {
 		
-		//Menghitung berapa lama pegawai bekerja dalam setahun ini, jika pegawai sudah bekerja dari tahun sebelumnya maka otomatis dianggap 12 bulan.
 		LocalDate date = LocalDate.now();
 		
 		if (date.getYear() == yearJoined) {
