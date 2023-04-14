@@ -5,13 +5,7 @@ import java.time.Month;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Employee {
-
-	private String employeeId;
-	private String firstName;
-	private String lastName;
-	private String idNumber;
-	private String address;
+public class Employee extends DataPegawai{
 	
 	private int yearJoined;
 	private int monthJoined;
