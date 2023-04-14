@@ -5,13 +5,13 @@ import java.time.Month;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Employee {
+public class Employee extends DataPegawai{
 
-	private String employeeId;
-	private String firstName;
-	private String lastName;
-	private String idNumber;
-	private String address;
+	private enum NamaGender{
+		Lakilaki,
+		Perempuan
+	}
+
 
 	private DataPegawai pegawai;
 	
@@ -21,8 +21,6 @@ public class Employee {
 	private int monthWorkingInYear;
 	
 	private boolean isForeigner;
-	private boolean gender; //true = Laki-laki, false = Perempuan
-	
 	private int monthlySalary;
 	private int otherMonthlyIncome;
 	private int annualDeductible;
@@ -34,6 +32,7 @@ public class Employee {
 	private List<String> childIdNumbers;
 	
 	public Employee(DataPegawai pegawai, int yearJoined, int monthJoined, int dayJoined, boolean isForeigner, boolean gender) {
+		
 		pegawai = new DataPegawai();
 		pegawai.employeeId = employeeId;
 		pegawai.firstName = firstName;
@@ -44,8 +43,6 @@ public class Employee {
 		this.monthJoined = monthJoined;
 		this.dayJoined = dayJoined;
 		this.isForeigner = isForeigner;
-		this.gender = gender;
-		
 		childNames = new LinkedList<String>();
 		childIdNumbers = new LinkedList<String>();
 	}
