@@ -6,6 +6,17 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Employee extends DataPegawai{
+
+	private enum NamaGender{
+		Lakilaki,
+		Perempuan
+	}
+
+	private String employeeId;
+	private String firstName;
+	private String lastName;
+	private String idNumber;
+	private String address;
 	
 	private int yearJoined;
 	private int monthJoined;
@@ -13,7 +24,8 @@ public class Employee extends DataPegawai{
 	private int monthWorkingInYear;
 	
 	private boolean isForeigner;
-	private boolean gender; //true = Laki-laki, false = Perempuan
+	// Primitive Obsession
+	private NamaGender gender; 
 	
 	private int monthlySalary;
 	private int otherMonthlyIncome;
@@ -25,7 +37,7 @@ public class Employee extends DataPegawai{
 	private List<String> childNames;
 	private List<String> childIdNumbers;
 	
-	public Employee(String employeeId, String firstName, String lastName, String idNumber, String address, int yearJoined, int monthJoined, int dayJoined, boolean isForeigner, boolean gender) {
+	public Employee(String employeeId, String firstName, String lastName, String idNumber, String address, int yearJoined, int monthJoined, int dayJoined, boolean isForeigner, NamaGender gender) {
 		this.employeeId = employeeId;
 		this.firstName = firstName;
 		this.lastName = lastName;
