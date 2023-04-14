@@ -12,11 +12,8 @@ public class Employee extends DataPegawai{
 		Perempuan
 	}
 
-	private String employeeId;
-	private String firstName;
-	private String lastName;
-	private String idNumber;
-	private String address;
+
+	private DataPegawai pegawai;
 	
 	private int yearJoined;
 	private int monthJoined;
@@ -24,9 +21,6 @@ public class Employee extends DataPegawai{
 	private int monthWorkingInYear;
 	
 	private boolean isForeigner;
-	// Primitive Obsession
-	private NamaGender gender; 
-	
 	private int monthlySalary;
 	private int otherMonthlyIncome;
 	private int annualDeductible;
@@ -37,18 +31,18 @@ public class Employee extends DataPegawai{
 	private List<String> childNames;
 	private List<String> childIdNumbers;
 	
-	public Employee(String employeeId, String firstName, String lastName, String idNumber, String address, int yearJoined, int monthJoined, int dayJoined, boolean isForeigner, NamaGender gender) {
-		this.employeeId = employeeId;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.idNumber = idNumber;
-		this.address = address;
+	public Employee(DataPegawai pegawai, int yearJoined, int monthJoined, int dayJoined, boolean isForeigner, boolean gender) {
+		
+		pegawai = new DataPegawai();
+		pegawai.employeeId = employeeId;
+		pegawai.firstName = firstName;
+		pegawai.lastName = lastName;
+		pegawai.idNumber = idNumber;
+		pegawai.address = address;
 		this.yearJoined = yearJoined;
 		this.monthJoined = monthJoined;
 		this.dayJoined = dayJoined;
 		this.isForeigner = isForeigner;
-		this.gender = gender;
-		
 		childNames = new LinkedList<String>();
 		childIdNumbers = new LinkedList<String>();
 	}
